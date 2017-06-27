@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Card</title>
+	<link rel="stylesheet" type="text/css" href="contact_card.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("form").submit(function(){
+				var firstName = $("#firstName").val();
+				var lastName = $("#lastName").val();
+				var description = $("#description").val();
+				$("body").append("<div><h2>" + firstName + " " + lastName + "</h2><p class=\"click\">Click for description.</p><p style=\"display:none\">" + description + "</p></div>");
+				return false;
+			});
+
+			$(document).on('click', 'div', function(){
+				// $(this).children().fadeToggle('slow');
+				if($(this).children("h2").is(':visible')){
+					$(this).children("h2").hide();
+					$(this).children("p").show();
+					$(this).children(".click").hide();
+				}
+				else{
+					$(this).children("p").hide();
+					$(this).children(".click").show();
+					$(this).children("h2").show();
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+	<form>
+		<label for="firstName">First name:</label>
+		<input  id="firstName" type="text" name="">
+		<label for="lastName">Last name: </label>
+		<input  id="lastName" type="text" name="">
+		<label for="description">Description: </label>
+		<textarea id="description"  placeholder="Enter description"></textarea>
+		<button>Add User</button>
+	</form>
+</body>
+</html>
