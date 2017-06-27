@@ -16,16 +16,19 @@
 
 			$(document).on('click', 'div', function(){
 				// $(this).children().fadeToggle('slow');
-				if($(this).children("h2").is(':visible')){
-					$(this).children("h2").hide();
-					$(this).children("p").show();
-					$(this).children(".click").hide();
-				}
-				else{
-					$(this).children("p").hide();
-					$(this).children(".click").show();
-					$(this).children("h2").show();
-				}
+
+				
+				// if($(this).children("h2").is(':visible')){
+				// 	$(this).children("h2").hide();
+				// 	$(this).children("p").show();
+				// 	$(this).children(".click").hide();
+				// }
+				// else{
+				// 	$(this).children("p").hide();
+				// 	$(this).children(".click").show();
+				// 	$(this).children("h2").show();
+				// }
+				$(this).children().toggle();
 			})
 		});
 	</script>
